@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: weather-dashboard
+    env: node
+    plan: free
+    branch: main
+    buildCommand: "npm install && npm run build"
+    startCommand: "npm run start"
+    envVars:
+      - key: API_KEY
+        fromSecret: 27f0bf6309eb20d117b9dafc872ba072
+      - key: API_BASE_URL
+        value: "https://api.openweathermap.org"
